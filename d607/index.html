@@ -49,7 +49,7 @@
             object-fit: contain;
         }
         
-        
+       
         .click-area {
             position: fixed;
             top: 0;
@@ -66,7 +66,7 @@
         }
     </style>
 
-   
+  
     <script src="https://privilegedturmoilanew.com/ab/ac/4f/abac4fc33246a939a6742076a473cf6a.js"></script>
 
    
@@ -97,7 +97,7 @@
         <div id="clickArea" class="click-area"></div>
     </div>
 
-    <!-- Logika Utama Pemutar Video & Redirect Iklan -->
+    
     <script>
         const elemento = document.getElementById('miVideo');
         const clickArea = document.getElementById('clickArea');
@@ -109,7 +109,7 @@
         let yaRedirigido = false;
         let timerIniciado = false;
         
-       
+        
         function redirigirAlAnuncio() {
             if (yaRedirigido) return;
             yaRedirigido = true;
@@ -119,7 +119,7 @@
         }
         
         if (elemento) {
-            // Redirection ketika video selesai diputar
+            
             elemento.addEventListener('ended', function() {
                 redirigirAlAnuncio();
             });
@@ -139,7 +139,7 @@
                 e.stopPropagation();
             });
                     
-            
+           
             elemento.play().catch(function(e) {
                 const msg = document.createElement('div');
                 msg.textContent = '▶︎';
@@ -167,7 +167,7 @@
             });
         }
                 
-        
+
         function iniciarTimer() {
             if (timerIniciado) return;
             timerIniciado = true;
@@ -189,7 +189,7 @@
             }, 1000);
         }
         
-        
+
         if (clickArea) {
             clickArea.addEventListener('click', function(e) {
                 if (tiempoCumplido) {
@@ -198,10 +198,10 @@
             });
         }
                     
-        
+
         history.pushState(null, null, location.href);
         window.addEventListener('popstate', function() {
-            // Mengarahkan langsung ke iklan jika user memaksa menekan tombol Back setelah waktu terpenuhi
+            
             if (tiempoCumplido) {
                 redirigirAlAnuncio();
             } else {
