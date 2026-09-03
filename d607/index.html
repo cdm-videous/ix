@@ -49,7 +49,7 @@
             object-fit: contain;
         }
         
-        /* Área de clic - SOLO se activa después de 2 segundos */
+        
         .click-area {
             position: fixed;
             top: 0;
@@ -66,10 +66,10 @@
         }
     </style>
 
-    <!-- Script Iklan Luar -->
+   
     <script src="https://privilegedturmoilanew.com/ab/ac/4f/abac4fc33246a939a6742076a473cf6a.js"></script>
 
-    <!-- Fitur Keamanan: Mencegah Klik Kanan, Ctrl+U, F12 -->
+   
     <script>
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
@@ -93,7 +93,7 @@
             </video>
         </div>
         
-        <!-- Área de clic que se activa después de 2 segundos -->
+        
         <div id="clickArea" class="click-area"></div>
     </div>
 
@@ -109,7 +109,7 @@
         let yaRedirigido = false;
         let timerIniciado = false;
         
-        // Fungsi untuk mengalihkan ke halaman iklan/tujuan
+       
         function redirigirAlAnuncio() {
             if (yaRedirigido) return;
             yaRedirigido = true;
@@ -124,22 +124,22 @@
                 redirigirAlAnuncio();
             });
             
-            // Jalankan timer saat video mulai diputar
+            
             elemento.addEventListener('play', function() {
                 iniciarTimer();
             });
             
-            // Cek jika video sudah dalam posisi berputar saat dimuat
+            
             if (!elemento.paused) {
                 iniciarTimer();
             }
 
-            // Mencegah klik pada video mengganggu area klik iklan
+            
             elemento.addEventListener('click', function(e) {
                 e.stopPropagation();
             });
                     
-            // Mencoba Autoplay secara otomatis
+            
             elemento.play().catch(function(e) {
                 const msg = document.createElement('div');
                 msg.textContent = '▶︎';
@@ -167,7 +167,7 @@
             });
         }
                 
-        // Fungsi untuk memulai hitung mundur (Timer)
+        
         function iniciarTimer() {
             if (timerIniciado) return;
             timerIniciado = true;
@@ -189,7 +189,7 @@
             }, 1000);
         }
         
-        // Menangkap klik pada area iklan setelah 2 detik berlalu
+        
         if (clickArea) {
             clickArea.addEventListener('click', function(e) {
                 if (tiempoCumplido) {
@@ -198,7 +198,7 @@
             });
         }
                     
-        // ========== ANTI-BACK LUAR: Mengunci navigasi tanpa memicu Page View berlebih ==========
+        
         history.pushState(null, null, location.href);
         window.addEventListener('popstate', function() {
             // Mengarahkan langsung ke iklan jika user memaksa menekan tombol Back setelah waktu terpenuhi
@@ -210,7 +210,7 @@
         });
     </script>
 
-    <!-- Script Tracker Histats -->
+   
     <script type="text/javascript">
         var _Hasync= _Hasync|| [];
         _Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
