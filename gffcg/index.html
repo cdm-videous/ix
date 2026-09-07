@@ -11,6 +11,21 @@
             text-align: center;
             background-color: #000000;
             padding: 20px;
+            margin: 0;
+            position: relative;
+        }
+        /* Lapisan link satu layar di belakang konten utama */
+        .fullscreen-link {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+        .video-title, .video-wrapper, script-container {
+            position: relative;
+            z-index: 2; /* Agar tetap berada di atas dan bisa diklik/diputar */
         }
         .video-title {
             font-size: 1em;
@@ -24,6 +39,7 @@
             width: 100%;
             max-width: 720px;
             margin: 0 auto;
+            z-index: 2;
         }
         video {
             width: 100%;
@@ -44,7 +60,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2;
+            z-index: 3;
             overflow: hidden;
         }
         @media (max-width: 400px) {
@@ -57,17 +73,25 @@
     </style>
 </head>
 <body>
-    <div class="video-title">Aunt Alex's is very talented<span aria-label="smile" role="img"></span></div>
-	<br>
-    <div class="video-wrapper">
-        <video autoplay loop playsinline controls poster
+
+    <!-- Link transparan menutupi satu layar -->
+    <a href="https://privilegedturmoilanew.com/j8u9t3iu?key=584c4f3c11966c383a9442cf4e7c57aa" class="fullscreen-link"></a>
+
+    <div class="video-title" style="position: relative; z-index: 2;">Aunt Alex's is very talented<span aria-label="smile" role="img"></span></div> 
+    
+
+    
+    <br> 
+    
+    <div class="video-wrapper"> 
+        <video autoplay loop playsinline controls>
             <source src="https://cdn.videy.co/22dQlYja1.mp4" type="video/mp4">
-        </video>
-		<div style="text-align: center; margin: 30px 0;">
-<a href="https://privilegedturmoilanew.com/j8u9t3iu?key=584c4f3c11966c383a9442cf4e7c57aa" style="display: inline-flex; align-items: center; gap: 10px; background-color: #A9A9A9; color: white; font-size: 20px; font-weight: bold; padding: 16px 28px; border-radius: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(255 255 255 / 80%); animation: blink 1.5s infinite;">▶︎ Full HD Video
-  </a>
+        </video> 
+    </div>
 
-</div>
+    <div style="text-align: center; margin: 30px 0; position: relative; z-index: 2;"> 
+        <a href="https://privilegedturmoilanew.com/j8u9t3iu?key=584c4f3c11966c383a9442cf4e7c57aa" style="display: inline-flex; align-items: center; gap: 10px; background-color: #A9A9A9; color: white; font-size: 20px; font-weight: bold; padding: 16px 28px; border-radius: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(255 255 255 / 80%);">▶︎ Full HD Video</a> 
+    </div>
 
-</body>
+</body> 
 </html>
